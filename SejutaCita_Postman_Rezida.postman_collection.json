@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "9fd282ff-a4be-4839-b9d3-41cc1ec0dcb0",
+		"name": "SejutaCita_Postman_Rezida",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Display awal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1 Display (init)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/initDisplay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"initDisplay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Create admin(init)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\"      : \"Rezida\",\r\n    \"Gender\"    : \"Female\",\r\n    \"BirthDate\" : \"1997-07-05\",\r\n    \"Username\"  : \"rere\",\r\n    \"Password\"  : \"halo\",\r\n    \"UserType\"  : \"admin\",\r\n    \"CreatedBy\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/init",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\"  : \"rere\",\r\n    \"Password\"  : \"halo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/login/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"login",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get authorization by token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDEzNzQ2OTQsImRhdGEiOnt9LCJpYXQiOjE2NDEzNzQ2Nzl9.ZpgB4XC4V2sh8culgqn5s_g9SzGnslHziO2TtlfbAcQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/login/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"login",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get refresh token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.cmVyZQ.9e7VMrb_MistVsthsLxbn0zSAIqcKSa4GA8MCcSGD_E\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/login/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"login",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Display data by user type",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\"  : \"rere\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/displayData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"displayData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\"      : \"Nur\",\r\n    \"Gender\"    : \"Female\",\r\n    \"BirthDate\" : \"1997-07-05\",\r\n    \"Username\"  : \"run\",\r\n    \"Password\"  : \"halo\",\r\n    \"UserType\"  : \"user\",\r\n    \"CreatedBy\" : \"rere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Update data",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\"      : \"Riri\",\r\n    \"Gender\"    : \"Female\",\r\n    \"BirthDate\" : \"1997-07-05\",\r\n    \"Username\"  : \"run\",\r\n    \"UserType\"  : \"user\",\r\n    \"CreatedBy\" : \"rere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Reset password",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\"  : \"run\",\r\n    \"CreatedBy\" : \"rere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/resetPass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"resetPass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Get user login _id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CreatedBy\"  : \"run\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/getId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"getId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Change password",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\"  : \"run\",\r\n    \"Password\"  : \"halo\",\r\n    \"CreatedBy\" : \"run\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/chagePass/61d563f4203fe6b147b4dfb7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"chagePass",
+						"61d563f4203fe6b147b4dfb7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\"  : \"run\",\r\n    \"CreatedBy\" : \"rere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13. Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.cmVyZQ.9e7VMrb_MistVsthsLxbn0zSAIqcKSa4GA8MCcSGD_E\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/login/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"login",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

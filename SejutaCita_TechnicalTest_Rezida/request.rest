@@ -1,0 +1,122 @@
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/initDisplay
+
+###
+POST http://localhost:3000/init
+Content-Type: application/json
+
+{
+    "Name"      : "Rez",
+    "Gender"    : "Female",
+    "BirthDate" : "1997-07-05",
+    "Username"  : "rer",
+    "Password"  : "halo",
+    "UserType"  : "admin",
+    "CreatedBy" : ""
+}
+
+###
+GET http://localhost:3000/login/login
+Content-Type: application/json
+
+{
+    "Username"  : "rere",
+    "Password"  : "halo"
+}
+
+###
+GET http://localhost:3000/login/auth
+Content-Type: application/json
+
+{
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDExODc5NTgsImRhdGEiOnt9LCJpYXQiOjE2NDExODc5NDN9.nmFo1HUeDa2pqmHxA4-FFOFfNsU48UBgSABYQXsKtOQ"
+}
+
+###
+GET http://localhost:3000/login/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.cmVyZQ.9e7VMrb_MistVsthsLxbn0zSAIqcKSa4GA8MCcSGD_E"
+}
+
+###
+DELETE http://localhost:3000/login/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.cmVyZQ.9e7VMrb_MistVsthsLxbn0zSAIqcKSa4GA8MCcSGD_E"
+}
+
+###
+GET http://localhost:3000/displayData
+Content-Type: application/json
+
+{
+    "Username"  : "rere"
+}
+
+###
+POST http://localhost:3000/admin
+Content-Type: application/json
+
+{
+    "Name"      : "Riri",
+    "Gender"    : "Female",
+    "BirthDate" : "1997-07-05",
+    "Username"  : "riri",
+    "Password"  : "halo",
+    "UserType"  : "user",
+    "CreatedBy" : "rere"
+}
+
+###
+PATCH http://localhost:3000/admin
+Content-Type: application/json
+
+{
+    "Name"      : "Riri",
+    "Gender"    : "Female",
+    "BirthDate" : "1997-07-05",
+    "Username"  : "riri",
+    "UserType"  : "user",
+    "CreatedBy" : "rere"
+}
+
+###
+PATCH http://localhost:3000/resetPass
+Content-Type: application/json
+
+{
+    "Username"  : "riri",
+    "CreatedBy" : "riri"
+}
+
+###
+GET http://localhost:3000/getId
+Content-Type: application/json
+
+{
+    "CreatedBy"  : "riri"
+}
+
+###
+PATCH http://localhost:3000/chagePass/61d28adbfe4c366e0bed1c3f
+Content-Type: application/json
+
+{
+    "Username"  : "riri",
+    "Password"  : "halo",
+    "CreatedBy" : "riri"
+}
+
+###
+DELETE http://localhost:3000/delete
+Content-Type: application/json
+
+{
+    "Username"  : "rara",
+    "CreatedBy" : "rar"
+}
